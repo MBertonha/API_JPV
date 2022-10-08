@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Tnf.Dto;
+
+namespace JpvApi.Dominio.Dto
+{
+    public class JpvDto : BaseDto
+    {
+        public int SeqUsuario { get; set; }
+        public string Cpf { get; set; }
+        public string Nome { get; set; }
+        public DateTime? DtaNascimento{ get; set; }
+        public decimal? ValorRenda { get; set; }
+    }
+}

@@ -1,0 +1,9 @@
+<po-page-list [p-title]="titulo" >
+    <a routerLink="/inserir">
+        <po-button p-label="Adicionar usuário" p-icon="po-icon po-icon-plus" (p-click)="onClick()" p-type="primary"> </po-button>
+    </a>
+    <hr>
+    <po-table #table [p-columns]="colunas" [p-items]="itens" [p-actions]="actions">
+    </po-table>
+
+</po-page-list>

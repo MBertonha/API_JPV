@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Devart.Data.PostgreSql" Version="7.19.1759" />
+    <PackageReference Include="Tnf.AspNetCore" Version="3.0.0.14603" />
+    <PackageReference Include="Tnf.EntityFrameworkCore" Version="3.0.0.14603" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JpvApi.Dominio.Dto\JpvApi.Dominio.Dto.csproj" />
+    <ProjectReference Include="..\JpvApi.Dominio\JpvApi.Dominio.csproj" />
+  </ItemGroup>
+
+</Project>

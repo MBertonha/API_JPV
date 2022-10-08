@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.4" />
+    <PackageReference Include="Tnf.Drivers.DevartPostgreSQL" Version="3.0.0.14603" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JpvApi.Infra\JpvApi.Infra.csproj" />
+  </ItemGroup>
+
+</Project>

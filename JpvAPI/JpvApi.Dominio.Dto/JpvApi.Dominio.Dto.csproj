@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Tnf.Dto" Version="3.1.0.26201" />
+    <PackageReference Include="Tnf.Repositories" Version="3.0.0.14603" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JpvApi.Dominio\JpvApi.Dominio.csproj" />
+  </ItemGroup>
+  
+</Project>

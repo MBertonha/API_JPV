@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.6.2" />
+    <PackageReference Include="Tnf.AspNetCore" Version="3.0.0.14603" />
+    <PackageReference Include="Tnf.Domain" Version="3.0.0.14603" />
+    <PackageReference Include="Tnf.Repositories" Version="3.0.0.14603" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Entidades\Jpv\Validacao\" />
+  </ItemGroup>
+  
+</Project>

@@ -1,0 +1,46 @@
+<po-page-list [p-title]="titulo" >
+
+    <a routerLink="/listar">
+        <po-button p-label="Voltar" p-icon="po-icon po-icon-first-page"> </po-button>
+    </a>
+    <br><br>
+    <form [formGroup]="formulario">
+        <div class="po-row">
+            <po-input 
+                name="seqUsuario" p-clean class="po-md-1" p-placeholder="Código do usuário" p-disabled="true" formControlName="seqUsuario" p-label="Código">
+            </po-input>
+        </div>
+
+        <po-divider p-label="Dados do cliente" ></po-divider>
+
+        <div class="po-row">
+            <po-input 
+                name="nome" p-clean class="po-md-6" [p-maxlength]="30" p-placeholder="Nome" formControlName="nome" p-label="Nome do cliente">
+            </po-input>
+
+            <po-input 
+                name="cpf" p-clean class="po-md-6" [p-maxlength]="15" p-placeholder="CPF" formControlName="cpf" p-label="CPF">
+            </po-input>
+        </div>
+
+        <po-divider p-label="Dados gerais" ></po-divider>
+        <div class="po-row">
+
+            <po-decimal 
+                name="valorRenda" p-clean class="po-md-4" p-placeholder="Valor da renda" formControlName="valorRenda" p-label="Valor">
+            </po-decimal>
+
+            <po-datepicker 
+                name="dtaNascimento" class="po-md-4" p-clean p-placeholder="Selecione uma data" p-format="dd/mm/yyyy" formControlName="dtaNascimento" p-label="Data de nascimento">
+            </po-datepicker>
+        </div>
+
+
+    </form>
+    <hr>
+    <br><br>
+    <div class="po-row">
+        <po-button p-label="Alterar" p-type="primary" (p-click)="alterar()"> </po-button>
+    </div>
+</po-page-list>
+
