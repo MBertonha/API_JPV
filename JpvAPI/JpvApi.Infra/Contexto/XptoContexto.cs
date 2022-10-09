@@ -52,7 +52,11 @@ namespace JpvApi.Infra.Contexto
             {
                 using (var command = entry.Context.Database.GetDbConnection().CreateCommand())
                 {
-                    command.CommandText = $"SELECT NEXTVAL('{_sequenceName}')";
+                    //Postgres
+                    //command.CommandText = $"SELECT NEXTVAL('{_sequenceName}')";
+
+                    //SqlServer
+                    command.CommandText = $"SELECT NEXT VALUE FOR dbo.{_sequenceName}";
                     entry.Context.Database.OpenConnection();
                     var reader = command.ExecuteScalar();
                     return Convert.ToInt32(reader);

@@ -21,5 +21,17 @@ namespace JpvApi.Infra.Database
 
             return services;
         }
+
+        public static IServiceCollection AddEfCoreSqlServer(this IServiceCollection services)
+        {
+            services.AddEfCore();
+
+            services.AddTnfDbContext<JpvContexto, SqlServerContexto>(config =>
+            {
+                config.DbContextOptions.UseSqlServer("Server=testesqlserver.cwcsxvemsvjr.sa-east-1.rds.amazonaws.com,3066;Database=apijpv;User Id=admin;Password=admin123;");
+            });
+
+            return services;
+        }
     }
 }

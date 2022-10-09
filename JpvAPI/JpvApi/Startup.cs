@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using Tnf.Configuration;
@@ -11,6 +12,7 @@ using JpvApi.Servico.Servicos;
 using JpvApi.Servico.AutoMapper;
 using JpvApi.Dominio.Localizacao;
 using JpvApi.Configurações;
+using JpvApi.Infra.Contexto;
 
 namespace JpvAPI
 {
@@ -40,7 +42,8 @@ namespace JpvAPI
             #endregion
 
             #region Banco Dados
-            services.AddEfCorePostgrees();
+            //services.AddEfCorePostgrees();
+            services.AddEfCoreSqlServer();
             #endregion
 
             #region Memory Cache
@@ -65,39 +68,19 @@ namespace JpvAPI
 
         }
 
+        /*Conexão com Sql Server*/
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApiVersionDescriptionProvider provider)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseHsts();
-            }
 
-            #region Swagger
             app.UseSwaggerConfiguration(provider);
-            #endregion
 
-            #region TNF
-            app.UseTnfAspNetCore(configuration =>
-            {
-                configuration.UseDomainLocalization();
-                configuration.DefaultNameOrConnectionString = "Server=localhost;Port=5432;Database=desafio;User Id=postgres;Password=postgres;";
-                configuration.EnableDevartPostgreSQLDriver();
-                configuration.DefaultPageSize(10, 999999);
-            });
-            #endregion
+            app.UseRouting();
 
-            #region CORS
-            app.UseCors(c =>
-            {
-                c.AllowAnyHeader();
-                c.AllowAnyMethod();
-                c.AllowAnyOrigin();
-            });
-            #endregion
+            app.UseAuthorization();
 
             app.UseMvc();
         }
