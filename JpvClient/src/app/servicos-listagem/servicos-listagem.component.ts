@@ -30,6 +30,7 @@ export class ServicosListagemComponent implements OnInit {
 
   ngOnInit(): void {
     this.router.navigate(['/listar']);
+    this.router.navigate(['/listar']);
     this.listar();
   }
 

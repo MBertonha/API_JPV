@@ -80,6 +80,15 @@ namespace JpvAPI
 
             app.UseRouting();
 
+            #region CORS
+            app.UseCors(c =>
+            {
+                c.AllowAnyHeader();
+                c.AllowAnyMethod();
+                c.AllowAnyOrigin();
+            });
+            #endregion
+
             app.UseAuthorization();
 
             app.UseMvc();
