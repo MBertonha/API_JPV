@@ -10,25 +10,13 @@ namespace JpvApi.Infra.Database
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddEfCorePostgrees(this IServiceCollection services)
-        {
-            services.AddEfCore();
-
-            services.AddTnfDbContext<JpvContexto, PostgreesContexto>(config =>
-            {
-                config.DbContextOptions.UseNpgsql(config.ConnectionString);
-            });
-
-            return services;
-        }
-
-        public static IServiceCollection AddEfCoreSqlServer(this IServiceCollection services)
+        public static IServiceCollection AddEfCoreSqlServer(this IServiceCollection services, string conString)
         {
             services.AddEfCore();
 
             services.AddTnfDbContext<JpvContexto, SqlServerContexto>(config =>
             {
-                config.DbContextOptions.UseSqlServer("Server=testesqlserver.cwcsxvemsvjr.sa-east-1.rds.amazonaws.com,3066;Database=apijpv;User Id=admin;Password=admin123;");
+                config.DbContextOptions.UseSqlServer(conString);
             });
 
             return services;

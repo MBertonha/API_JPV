@@ -42,8 +42,7 @@ namespace JpvAPI
             #endregion
 
             #region Banco Dados
-            //services.AddEfCorePostgrees();
-            services.AddEfCoreSqlServer();
+            services.AddEfCoreSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             #endregion
 
             #region Memory Cache
